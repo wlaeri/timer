@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './App.css'
 
 class App extends Component {
 	constructor(props){
@@ -56,34 +57,10 @@ class App extends Component {
 	}
 
 	render() {
-	const styles = {
-		main: {
-			flex: 1,
-			justifyContent: 'center',
-			padding: 20,
-			width: 120
-		},
-		stopwatch: {
-			backgroundColor: 'green',
-			color: 'white',
-			padding: 20,
-			width: 120,
-			textAlign: 'center',
-			cursor: 'pointer'
-		},
-		li: ({split, index}) => ({
-			backgroundColor: index == this.state.highlightedIndex ? 'lightgray' : 'white',
-			color: 'black',
-			margin: 5,
-			padding: 5,
-			textAlign: 'center',
-			cursor: 'pointer'
-		})
-	}
 
 	return (
-		<div style={styles.main}>
-			<div onClick={() => this.clickStopwatch()} style={styles.stopwatch}>
+		<div id="main">
+			<div onClick={() => this.clickStopwatch()} id="stopwatch">
 				{
 					this.formatTime(this.state.count)
 				}
@@ -92,7 +69,7 @@ class App extends Component {
 				{
 					this.state.splits.map((split, index) => {
 						return <li
-							style={styles.li({split, index})} 
+							className={index == this.state.highlightedIndex ? 'highlighted' : undefined} 
 							onClick={() => this.clickSplit({split, index})}
 						>
 							{this.formatTime(split)}

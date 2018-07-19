@@ -1,0 +1,24 @@
+#main {
+	padding: 20px;
+	width: 120px;
+}
+
+#stopwatch {
+	background-color: green;
+	color: white;
+	padding: 20px;
+	width: 120px;
+	text-align: center;
+	cursor: pointer;
+}
+
+li {
+	margin: 5px;
+	padding: 5px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.highlighted {
+	background-color: lightgray;
+}
